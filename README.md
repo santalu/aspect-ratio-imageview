@@ -1,5 +1,7 @@
 # Aspect Ratio ImageView
 
+[![](https://jitpack.io/v/santalu/aspect-ratio-imageview.svg)](https://jitpack.io/#santalu/aspect-ratio-imageview)
+
 A simple imageview which scales the width or height aspect with the given ratio
 
 ## Sample
