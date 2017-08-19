@@ -1,6 +1,6 @@
 # Aspect Ratio ImageView
 
-[![](https://jitpack.io/v/santalu/aspect-ratio-imageview.svg)](https://jitpack.io/#santalu/aspect-ratio-imageview)
+[![](https://jitpack.io/v/santalu/aspect-ratio-imageview.svg)](https://jitpack.io/#santalu/aspect-ratio-imageview) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Aspect%20Ratio%20ImageView-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6071)
 
 A simple imageview which scales the width or height aspect with the given ratio
 
