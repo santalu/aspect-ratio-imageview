@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.support.annotation.IntDef;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
+import android.util.Log;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -20,9 +21,11 @@ public class AspectRatioImageView extends AppCompatImageView {
     public @interface Aspect {
         int WIDTH = 0;
         int HEIGHT = 1;
+        int AUTO = 2;
     }
 
-    private static final int DEFAULT_ASPECT_RATIO = 1;
+    public static final String TAG = AspectRatioImageView.class.getSimpleName();
+    public static final int DEFAULT_RATIO = 1;
 
     private int mAspect;
     private float mAspectRatio;
@@ -43,24 +46,44 @@ public class AspectRatioImageView extends AppCompatImageView {
 
     @Override protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int height = getMeasuredHeight();
+        int width = getMeasuredWidth();
+
+        if (width == 0 || height == 0) {
+            return;
+        }
+
+        Log.i(TAG, String.format("width %s height %s", width, height));
+
         switch (mAspect) {
+            case Aspect.AUTO:
+                if (height > width) {
+                    mAspect = Aspect.WIDTH;
+                    mAspectRatio = Math.round((double) height / width);
+                    setMeasuredDimension((int) (height * mAspectRatio), height);
+                } else {
+                    mAspect = Aspect.HEIGHT;
+                    mAspectRatio = Math.round((double) height / width);
+                    setMeasuredDimension(width, (int) (width * mAspectRatio));
+                }
+                break;
             case Aspect.WIDTH:
-                int height = getMeasuredHeight();
                 setMeasuredDimension((int) (height * mAspectRatio), height);
                 break;
             case Aspect.HEIGHT:
             default:
-                int width = getMeasuredWidth();
                 setMeasuredDimension(width, (int) (width * mAspectRatio));
                 break;
         }
+
+        Log.i(TAG, String.format("aspect %s ratio %s", mAspect, mAspectRatio));
     }
 
     private void init(AttributeSet attrs) {
         TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.AspectRatioImageView);
         try {
             mAspect = a.getInt(R.styleable.AspectRatioImageView_ari_aspect, Aspect.HEIGHT);
-            mAspectRatio = a.getFloat(R.styleable.AspectRatioImageView_ari_ratio, DEFAULT_ASPECT_RATIO);
+            mAspectRatio = a.getFloat(R.styleable.AspectRatioImageView_ari_ratio, DEFAULT_RATIO);
         } finally {
             a.recycle();
         }
@@ -68,13 +91,15 @@ public class AspectRatioImageView extends AppCompatImageView {
 
     public void setAspectRatio(float ratio) {
         mAspectRatio = ratio;
+        requestLayout();
     }
 
     public void setAspect(@Aspect int aspect) {
         mAspect = aspect;
+        requestLayout();
     }
 
-    public float getAspectRation() {
+    public double getAspectRatio() {
         return mAspectRatio;
     }
 
