@@ -20,7 +20,7 @@ allprojects {
 ```
 ```
 dependencies {
-	compile 'com.github.santalu:aspect-ratio-imageview:1.0.1'
+  compile 'com.github.santalu:aspect-ratio-imageview:1.0.1'
 }
 ```
 
@@ -39,7 +39,7 @@ dependencies {
 
 | Name        | Description           | Value  |
 | ------------- |:-------------:| -----:|
-| ari_aspect      | type of measurement | width, height |
+| ari_aspect      | type of measurement | width, height, auto |
 | ari_ratio     | scale value of measurement  | float |
 
 ## License
