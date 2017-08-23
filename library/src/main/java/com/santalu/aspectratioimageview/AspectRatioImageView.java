@@ -49,21 +49,21 @@ public class AspectRatioImageView extends AppCompatImageView {
         int height = getMeasuredHeight();
         int width = getMeasuredWidth();
 
-        if (width == 0 || height == 0) {
-            return;
-        }
-
         Log.i(TAG, String.format("width %s height %s", width, height));
 
         switch (mAspect) {
             case Aspect.AUTO:
                 if (height > width) {
+                    if (width == 0) return;
+
                     mAspect = Aspect.WIDTH;
                     mAspectRatio = Math.round((double) height / width);
                     setMeasuredDimension((int) (height * mAspectRatio), height);
                 } else {
+                    if (height == 0) return;
+
                     mAspect = Aspect.HEIGHT;
-                    mAspectRatio = Math.round((double) height / width);
+                    mAspectRatio = Math.round((double) width / height);
                     setMeasuredDimension(width, (int) (width * mAspectRatio));
                 }
                 break;
