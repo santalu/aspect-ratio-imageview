@@ -24,7 +24,6 @@ public class AspectRatioImageView extends AppCompatImageView {
         int AUTO = 2;
     }
 
-    public static final String TAG = AspectRatioImageView.class.getSimpleName();
     public static final int DEFAULT_RATIO = 1;
 
     private int mAspect;
@@ -48,8 +47,6 @@ public class AspectRatioImageView extends AppCompatImageView {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         int height = getMeasuredHeight();
         int width = getMeasuredWidth();
-
-        Log.i(TAG, String.format("width %s height %s", width, height));
 
         switch (mAspect) {
             case Aspect.AUTO:
@@ -75,8 +72,6 @@ public class AspectRatioImageView extends AppCompatImageView {
                 setMeasuredDimension(width, (int) (width * mAspectRatio));
                 break;
         }
-
-        Log.i(TAG, String.format("aspect %s ratio %s", mAspect, mAspectRatio));
     }
 
     private void init(AttributeSet attrs) {
