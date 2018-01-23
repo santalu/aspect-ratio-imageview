@@ -15,18 +15,8 @@ import java.lang.annotation.RetentionPolicy;
 
 public class AspectRatioImageView extends AppCompatImageView {
 
-    @IntDef({ Aspect.WIDTH, Aspect.HEIGHT })
-    @Retention(RetentionPolicy.SOURCE)
-    public @interface Aspect {
-        int WIDTH = 0;
-        int HEIGHT = 1;
-        int AUTO = 2;
-    }
-
-    private static final String TAG = AspectRatioImageView.class.getSimpleName();
-
     public static final int DEFAULT_RATIO = 1;
-
+    private static final String TAG = AspectRatioImageView.class.getSimpleName();
     private int aspect;
     private float aspectRatio;
 
@@ -95,9 +85,17 @@ public class AspectRatioImageView extends AppCompatImageView {
         setMeasuredDimension((int) (height * aspectRatio), height);
     }
 
+    public double getAspectRatio() {
+        return aspectRatio;
+    }
+
     public void setAspectRatio(float ratio) {
         aspectRatio = ratio;
         requestLayout();
+    }
+
+    @Aspect public int getAspect() {
+        return aspect;
     }
 
     public void setAspect(@Aspect int aspect) {
@@ -105,11 +103,12 @@ public class AspectRatioImageView extends AppCompatImageView {
         requestLayout();
     }
 
-    public double getAspectRatio() {
-        return aspectRatio;
-    }
+    @IntDef({Aspect.WIDTH, Aspect.HEIGHT})
+    @Retention(RetentionPolicy.SOURCE)
+    public @interface Aspect {
 
-    @Aspect public int getAspect() {
-        return aspect;
+        int WIDTH = 0;
+        int HEIGHT = 1;
+        int AUTO = 2;
     }
 }
