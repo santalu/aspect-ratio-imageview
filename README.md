@@ -20,7 +20,7 @@ allprojects {
 ```
 ```
 dependencies {
-  compile 'com.github.santalu:aspect-ratio-imageview:1.0.2'
+  compile 'com.github.santalu:aspect-ratio-imageview:1.0.3'
 }
 ```
 
