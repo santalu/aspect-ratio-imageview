@@ -4,27 +4,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp">
+    android:gravity="center"
+    android:orientation="vertical">
 
-  <com.santalu.aspectratioimageview.AspectRatioImageView
+  <com.santalu.widget.AspectRatioImageView
       android:layout_width="200dp"
-      android:layout_height="wrap_content"
-      android:layout_margin="8dp"
-      android:background="@color/colorAccent"
+      android:layout_height="0dp"
+      android:layout_marginBottom="20dp"
       android:scaleType="centerCrop"
-      app:ari_aspect="height"
-      app:ari_ratio="1.3"
-      app:srcCompat="@drawable/demo"/>
+      android:src="@drawable/sample"
+      app:ari_ratio="1.2"/>
 
-  <com.santalu.aspectratioimageview.AspectRatioImageView
-      android:layout_width="wrap_content"
+  <com.santalu.widget.AspectRatioImageView
+      android:layout_width="0dp"
       android:layout_height="200dp"
-      android:layout_margin="8dp"
-      android:background="@color/colorAccent"
       android:scaleType="centerCrop"
-      app:ari_aspect="width"
-      app:ari_ratio="1.3"
-      app:srcCompat="@drawable/demo"/>
+      android:src="@drawable/sample"
+      app:ari_ratio="1.2"/>
 
 </LinearLayout>

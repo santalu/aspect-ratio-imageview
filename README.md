@@ -6,7 +6,7 @@ A simple imageview which scales the width or height aspect with the given ratio
 
 ## Sample
 
-<img src="https://github.com/santalu/aspect-ratio-imageview/blob/master/screens/sample.png"/>
+<img src="https://github.com/santalu/aspect-ratio-imageview/blob/master/media/sample.png"/>
 
 ## Usage
 
@@ -20,27 +20,19 @@ allprojects {
 ```
 ```
 dependencies {
-  compile 'com.github.santalu:aspect-ratio-imageview:1.0.4'
+  implementation 'com.github.santalu:aspect-ratio-imageview:1.0.5'
 }
 ```
 
 ### XML
 ```xml
-<com.santalu.aspectratioimageview.AspectRatioImageView
+<com.santalu.widget.AspectRatioImageView
     android:layout_width="200dp"
-    android:layout_height="wrap_content"
+    android:layout_height="0dp"
     android:scaleType="centerCrop"
-    app:ari_aspect="height"
-    app:ari_ratio="1.3"
-    app:srcCompat="@drawable/demo"/>
+    android:src="@drawable/sample"
+    app:ari_ratio="1.2"/>
 ```
-
-## Attributes
-
-| Name        | Description           | Value  |
-| ------------- |:-------------:| -----:|
-| ari_aspect      | type of measurement | width, height, auto |
-| ari_ratio     | scale value of measurement  | float |
 
 ## License
 ```
