@@ -3,6 +3,7 @@ package com.santalu.widget
 import android.content.Context
 import android.support.v7.widget.AppCompatImageView
 import android.util.AttributeSet
+import android.util.Log
 
 class AspectRatioImageView : AppCompatImageView {
 
@@ -42,8 +43,10 @@ class AspectRatioImageView : AppCompatImageView {
     if (width > 0) {
       height = (width * ratio).toInt()
     } else {
-      width = (height * ratio).toInt()
+      width = (height / ratio).toInt()
     }
+
+    Log.v("TAG", "width $width height $height ratio $ratio")
 
     setMeasuredDimension(width, height)
   }

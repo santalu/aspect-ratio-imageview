@@ -8,16 +8,20 @@
     android:orientation="vertical">
 
   <com.santalu.widget.AspectRatioImageView
+      android:id="@+id/image1"
       android:layout_width="200dp"
       android:layout_height="0dp"
       android:layout_marginBottom="20dp"
+      android:foreground="?selectableItemBackground"
       android:scaleType="centerCrop"
       android:src="@drawable/sample"
       app:ari_ratio="1.2"/>
 
   <com.santalu.widget.AspectRatioImageView
+      android:id="@+id/image2"
       android:layout_width="0dp"
       android:layout_height="200dp"
+      android:foreground="?selectableItemBackground"
       android:scaleType="centerCrop"
       android:src="@drawable/sample"
       app:ari_ratio="1.2"/>
