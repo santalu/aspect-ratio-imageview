@@ -1,4 +1,4 @@
-package com.santalu.widget
+package com.santalu.aspectratioimageview
 
 import android.content.Context
 import android.support.v7.widget.AppCompatImageView

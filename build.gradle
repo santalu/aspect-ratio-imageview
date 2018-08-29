@@ -7,7 +7,7 @@ buildscript {
     target_sdk_version = 27
     min_sdk_version = 15
     gradle_version = "3.1.4"
-    kotlin_version = '1.2.60'
+    kotlin_version = '1.2.61'
     support_version = "27.1.1"
   }
 

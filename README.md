@@ -20,13 +20,13 @@ allprojects {
 ```
 ```
 dependencies {
-  implementation 'com.github.santalu:aspect-ratio-imageview:1.0.5'
+  implementation 'com.github.santalu:aspect-ratio-imageview:1.0.6'
 }
 ```
 
 ### XML
 ```xml
-<com.santalu.widget.AspectRatioImageView
+<com.santalu.aspectratioimageview.AspectRatioImageView
     android:layout_width="200dp"
     android:layout_height="0dp"
     android:scaleType="centerCrop"
