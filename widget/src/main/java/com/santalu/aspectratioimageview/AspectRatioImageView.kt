@@ -25,8 +25,10 @@ class AspectRatioImageView : AppCompatImageView {
   private fun init(context: Context, attrs: AttributeSet?) {
     attrs?.let {
       val a = context.obtainStyledAttributes(it, R.styleable.AspectRatioImageView)
-      ratio = a.getFloat(R.styleable.AspectRatioImageView_ari_ratio, DEFAULT_RATIO)
-      a.recycle()
+      with(a) {
+        ratio = getFloat(R.styleable.AspectRatioImageView_ari_ratio, DEFAULT_RATIO)
+        recycle()
+      }
     }
   }
 
