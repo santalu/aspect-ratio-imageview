@@ -14,19 +14,18 @@ class AspectRatioImageView : AppCompatImageView {
     init(context, attrs)
   }
 
-  constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(
-    context,
-    attrs,
-    defStyleAttr
-  ) {
+  constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
+      super(context, attrs, defStyleAttr) {
     init(context, attrs)
   }
 
   private fun init(context: Context, attrs: AttributeSet?) {
     attrs?.let {
       val a = context.obtainStyledAttributes(it, R.styleable.AspectRatioImageView)
-      ratio = a.getFloat(R.styleable.AspectRatioImageView_ari_ratio, DEFAULT_RATIO)
-      a.recycle()
+      with(a) {
+        ratio = getFloat(R.styleable.AspectRatioImageView_ari_ratio, DEFAULT_RATIO)
+        recycle()
+      }
     }
   }
 
