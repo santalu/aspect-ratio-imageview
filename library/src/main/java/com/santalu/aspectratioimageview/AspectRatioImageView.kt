@@ -1,8 +1,8 @@
 package com.santalu.aspectratioimageview
 
 import android.content.Context
-import android.support.v7.widget.AppCompatImageView
 import android.util.AttributeSet
+import androidx.appcompat.widget.AppCompatImageView
 
 class AspectRatioImageView : AppCompatImageView {
 
@@ -48,7 +48,6 @@ class AspectRatioImageView : AppCompatImageView {
   }
 
   companion object {
-
     const val DEFAULT_RATIO = 1F
   }
 }
