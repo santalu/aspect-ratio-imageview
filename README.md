@@ -6,7 +6,7 @@ A simple imageview which scales the width or height aspect with the given ratio
 
 ## Sample
 
-<img src="https://github.com/santalu/aspect-ratio-imageview/blob/master/media/sample.png"/>
+<img src="https://github.com/santalu/aspect-ratio-imageview/blob/master/media/sample.webp"/>
 
 ## Usage
 
@@ -20,7 +20,7 @@ allprojects {
 ```
 ```
 dependencies {
-  implementation 'com.github.santalu:aspect-ratio-imageview:1.0.7'
+  implementation 'com.github.santalu:aspect-ratio-imageview:1.0.8'
 }
 ```
 
