@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.image1
 import kotlinx.android.synthetic.main.activity_main.image2
 
-class MainActivity : AppCompatActivity() {
+class MainActivity: AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
